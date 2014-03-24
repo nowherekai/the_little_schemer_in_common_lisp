@@ -1,0 +1,11 @@
+; Chapter 5 of The Little Schemer:
+
+; *Oh My Gawd*: It's Full of Stars
+
+(defun rember* (a l)
+)
+(defun  test (a l)
+  (cond
+    ((null l) nil)
+    
+  
