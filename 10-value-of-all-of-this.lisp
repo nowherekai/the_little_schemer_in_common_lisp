@@ -3,9 +3,6 @@
 ;
 (defun build (first second)
   (cons first (cons second nil)))
-(setf new-entry  #'build)
-
-(funcall new-entry 1 2)
 
 (defun lookup-in-entry (name entry entry-f)
   (lookup-in-entry-help name
@@ -23,17 +20,8 @@
                              (cdr values)
                              entry-f))))
 
-(lookup-in-entry 'entree '((appetizer entree beverage) 
+(lookup-in-entry 'entree '((appetizer entree beverage)
                            (food tastes good)) #'print)
-
-
-(setf extend-table #'cons)
-
-(funcall extend-table '((1 2) (a b)) '(((appetizer entree beverage)
-                                        (pate boeuf vin))
-                                       ((beverage dessert)
-                                        ((food is) (number one with us)))))
-
 
 (defun lookup-in-table (name table table-f)
   (cond
@@ -45,38 +33,24 @@
                                            (cdr table)
                                            table-f))))))
 
-
-(cons 'car
-      (cons (cons 'quote
-                  (cons 
-                    (cons 'a
-                          (cons 'b
-                                (cons 'c
-                                      (quote ())))) 
-                    (quote ())))
-            (quote ()))) 
-
-
 (defun atom-to-action (e)
   (cond
-    ((numberp e) '*cosnt)
-    ((eq e 't) '*cosnt)
-    ((eq e 'nil) '*cosnt)
-    ((eq e 'cons) '*cosnt)
-    ((eq e 'car) '*cosnt)
-    ((eq e 'cdr) '*cosnt)
-    ((eq e 'null) '*cosnt)
-    ((eq e 'eq) '*cosnt)
-    ((eq e 'atom) '*cosnt)
-    ((eq e 'zerop) '*cosnt)
-    ((eq e '1+) '*cosnt)
+    ((numberp e) '*const)
+    ((eq e 't) '*const)
+    ((eq e 'nil) '*const)
+    ((eq e 'cons) '*const)
+    ((eq e 'car) '*const)
+    ((eq e 'cdr) '*const)
+    ((eq e 'null) '*const)
+    ((eq e 'eq) '*const)
+    ((eq e 'atom) '*const)
+    ((eq e 'zerop) '*const)
+    ((eq e '1+) '*const)
     ((eq e '1-) '*const)
     ((eq e 'numberp) '*const)
     ((eq e 'function) '*const)
     ((eq e 'funcall) '*const)
     (t '*identifier)))
-
-(atom-to-action 'car)
 
 (defun list-to-action (e)
   (cond
@@ -87,8 +61,6 @@
        ((eq (car e) 'cond) '*cond)
        (t '*application)))
     (t '*application)))
-
-(list-to-action '(quote car))
 
 (defun expression-to-action (e)
   (cond
@@ -114,7 +86,7 @@
   (text-of e))
 
 (defun *identifier (e table)
-  (lookup-in-table e table initial-table))
+  (lookup-in-table e table #'initial-table))
 
 (defun initial-table (name)
   (car (quote ())))
@@ -149,7 +121,7 @@
 
 ;not ok
 (*cond '(cond (coffee klatsch) (else party)) '(((coffee) (t)) ((klatsch party) (5 (6)))))
-
+(*cond '(cond (atom klatsch) (t party)) '(((coffee) (t)) ((klatsch party) (5 (6)))))
 
 (defun evlis (args table)
   (cond
@@ -205,7 +177,5 @@
     ((null x) nil)
     ((eq (car x) 'primitive) t)
     ((eq (car x) 'non-primitive t))))
-
-
 
 
