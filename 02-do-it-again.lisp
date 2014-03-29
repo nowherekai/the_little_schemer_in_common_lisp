@@ -11,8 +11,8 @@
     ((atom (car lst)) (lat? (cdr lst)))
     (t nil)))
 ;
-(lat '(bacon and eggs))  ;t
-(lat '(bacon (switch or eggs)))  ;nil
+(lat? '(bacon and eggs))  ;t
+(lat? '(bacon (switch or eggs)))  ;nil
 
 (defun member? (a lat)
   (cond
