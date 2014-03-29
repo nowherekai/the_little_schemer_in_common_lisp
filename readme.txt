@@ -1,16 +1,3 @@
-This repository contains all the code examples from the book "The Little
-Schemer." The code in this book is presented in a subset version of the Scheme
-programming language. The book is a dialogue between you and the authors about
-interesting examples of Scheme programs and it teaches you to think
-recursively.
-
-If you're interested, get the book from Amazon: http://bit.ly/4GjWdP
-
-The code examples were copied (and completed where necessary) from
-"The Little Schemer" by Peteris Krumins (peter@catonmat.net).
-
-His blog is at http://www.catonmat.net  --  good coders code, great reuse.
-
 ------------------------------------------------------------------------------
 
 Table of contents:
@@ -38,15 +25,13 @@ Table of contents:
 
 [01]-Chapter-1-Toys-----------------------------------------------------------
 
-See 01-toys.ss file for code examples.
-
 Chapter 1 introduces language primitives, operations and tests on them.
 
 The primitives include: atoms, lists and s-expressions.
 Operations include: car, cdr, cons.
-Tests include: null?, atom?, eq?.
+Tests include: null, atom, eq.
 
-It also defines five rules on using car, cdr, cons, null? and eq?.
+It also defines five rules on using car, cdr, cons, null and eq.
 
 The law of car:   The primitive car is defined only for non-empty lists.
 The law of cdr:   The primitive cdr is defined only for non-empty lists.
@@ -54,22 +39,15 @@ The law of cdr:   The primitive cdr is defined only for non-empty lists.
 The law of cons:  The primitive cons takes two arguments.
                   The second argument to cons must be a list.
                   The result is a list.
-The law of null?: The primitive null? is defined only for lists.
-The law of eq?:   The primitive eq? takes two arguments.
+The law of null: The primitive null is defined only for lists.
+The law of eq:   The primitive eq takes two arguments.
                   Each must be a non-numeric atom.
 
 
-.----------------------------------------------------------------------------.
-|                                                                            |
-|                         This space reserved for                            |
-|                              JELLY STAINS!                                 |
-|                                                                            |
 '----------------------------------------------------------------------------'
 
 
 [02]-Chapter-2-Do-It-Do-It-Again-and-Again-and-Again--------------------------
-
-See 02-do-it-again.ss file for code examples.
 
 Chapter 2 introduces two recursive functions and steps through them again, and
 again, and again until you understand recursion.
@@ -92,7 +70,6 @@ should be followed when programming recursively.
 
 [03]-Chapter-3-Cons-the-Magnificent-------------------------------------------
 
-See 03-cons-the-magnificent.ss file for code examples.
 
 Chapter 3 explains how to build lists with cons. It's done via showing how to
 write a function that removes an element from the list. Then the second
@@ -131,7 +108,6 @@ and a function that removes all occurrences of an element from a list.
 
 [04]-Chapter-4-Numbers-Games--------------------------------------------------
 
-See 04-numbers-games.ss file for code examples.
 
 Chapter 4 builds the arithmetic system from the primitives add1 and sub1.
 
@@ -187,7 +163,6 @@ numeric elements from the list.
 
 [05]-Chapter-5-Oh-My-Gawd-It's-Full-of-Stars----------------------------------
 
-See 05-full-of-stars.ss file for code examples.
 
 Chapter 5 introduces you to S-expressions and functions that manipulate them.
 
@@ -236,8 +211,6 @@ Finally the sixth commandment is presented:
 
 [06]-Chapter-6-Shadows--------------------------------------------------------
 
-See 06-shadows.ss file for code examples.
-
 Chapter 6 develops an evaluator for simple arithmetic expressions involving
 only +, * and exp.
 
@@ -272,8 +245,6 @@ lat? function doesn't work on a list of these numbers.
 
 [07]-Chapter-7-Friends-and-Relations------------------------------------------
 
-See 07-friends-and-relations.ss file for code examples.
-
 Chapter 7 is all about sets. It defines functions to test if the given list is
 a set, to construct a set from a list, to test if set1 is a subset of set2, to
 determine if two sets are equal, to find intersect of two sets, to fund
@@ -289,8 +260,6 @@ function and is it a full function.
 
 
 [08]-Chapter-8-Lambda-the-Ultimate--------------------------------------------
-
-See 08-lambda-the-ultimate.ss file for code examples.
 
 Chapter 8 introduces the concept that functions can be passed and returned
 from functions. It also introduces currying.
@@ -322,36 +291,4 @@ The final, tenth commandment, is stated.
 '----------------------------------------------------------------------------'
 
 And remember, an apple a day keeps the doctor away.
-
-
-[09]-Chapter-9-and-Again-and-Again-and-Again----------------------------------
-
-See 09-and-again.ss file for code examples.
-
-...
-
-Used this chapter to write an article on derivation of Y-Combinator:
-http://www.catonmat.net/blog/derivation-of-ycombinator/
-
-...
-
-
-[10]-Chapter-10-What-Is-the-Value-of-All-of-This------------------------------
-
-See 10-value-of-all-of-this.ss file for code examples.
-
-Chapter 10 implements Scheme in Scheme. That's it.
-
-It was a great adventure and now it's time for banquet!
-
-
-------------------------------------------------------------------------------
-
-That's it. I hope you find these examples useful when reading "The Little
-Schemer" yourself! Go get it at http://bit.ly/4GjWdP, if you haven't already!
-
-
-Sincerely,
-Peteris Krumins
-http://www.catonmat.net
 
